@@ -1,0 +1,35 @@
+
+
+def wholecode():
+  letters = 'abcdefghijkmnopqrstuvwxyz'
+
+
+  def encrpyt(m, k):
+    newmessage = ""
+    for i in m:
+      if i in letters:
+        newindex = letters.find(i) + k
+        while newindex >= 26:
+          newindex -= 26
+        newmessage = newmessage + letters[newindex]
+      else:
+        newmessage = newmessage + i
+    return newmessage
+
+  message = input("Entere your message.").lower()
+  key = int(input("Enter you key to encrpyt"))
+
+
+
+  encryptedmessage = encrpyt(message, key)
+
+  print(encryptedmessage)
+
+
+wholecode()
+yesorno = input("Do you want to play again?")
+yesorno.lower()
+if yesorno == "y":
+  wholecode()
+else:
+  print("Have a good day!")
